@@ -11,7 +11,7 @@ cliente.connect(servidor)
 
 while True:
     mensaje=input("Mensaje para enviar: ")
-    socket.sendto(mensaje.encode('utf-8'), servidor)
+    cliente.sendto(mensaje.encode('utf-8'), servidor)
     respuesta=cliente.recvfrom(1024)
     print(respuesta.decode('utf-8'))
 
